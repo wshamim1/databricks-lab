@@ -52,6 +52,8 @@ Separated examples:
 - REST cluster policies script: `scripts/rest/cluster_policies_api.sh`
 - REST SQL warehouses script: `scripts/rest/sql_warehouses_api.sh`
 - REST Unity Catalog script: `scripts/rest/unity_catalog_api.sh`
+- REST secrets script: `scripts/rest/secrets_api.sh`
+- REST serving endpoints script: `scripts/rest/serving_endpoints_api.sh`
 - SDK jobs script: `scripts/sdk/jobs_api.py`
 - SDK clusters script: `scripts/sdk/clusters_api.py`
 - SDK workspace script: `scripts/sdk/workspace_api.py`
@@ -60,6 +62,8 @@ Separated examples:
 - SDK cluster policies script: `scripts/sdk/cluster_policies_api.py`
 - SDK SQL warehouses script: `scripts/sdk/sql_warehouses_api.py`
 - SDK Unity Catalog script: `scripts/sdk/unity_catalog_api.py`
+- SDK secrets script: `scripts/sdk/secrets_api.py`
+- SDK serving endpoints script: `scripts/sdk/serving_endpoints_api.py`
 
 Use these as templates rather than production-ready deployment code.
 
@@ -228,6 +232,28 @@ Unity Catalog automation commonly includes:
 - Table and view metadata operations
 - Grants and privilege management
 - Governed object discovery across environments
+
+## What secret management APIs usually cover
+
+Secret management automation commonly includes:
+
+- Creating secret scopes
+- Listing secret scopes
+- Storing secrets in scopes
+- Listing secrets or ACLs depending on the environment
+
+These APIs are useful for keeping credentials and tokens out of notebooks and scripts.
+
+## What serving endpoint APIs usually cover
+
+Serving automation commonly includes:
+
+- Creating model serving endpoints
+- Listing or inspecting endpoints
+- Updating served model configurations
+- Deleting endpoints when no longer needed
+
+These APIs are useful when you want to operationalize ML models behind managed inference endpoints.
 
 ## Python SDK setup
 
