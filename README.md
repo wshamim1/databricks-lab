@@ -22,12 +22,13 @@ This repository is a compact learning path for Databricks fundamentals.
 5. [05 - Notebooks, Jobs, and Scheduling](tutorials/05-notebooks-jobs-scheduling.md)
 6. [06 - Databricks Architecture Diagram](tutorials/06-databricks-architecture-diagram.md)
 7. [07 - Databricks Glossary](tutorials/07-databricks-glossary.md)
-8. [Fundamentals Notebook](notebooks/databricks_fundamentals_examples.ipynb)
-9. [Delta Lake Operations Notebook](notebooks/delta_lake_operations_examples.ipynb)
-10. [Unity Catalog Hands-On Notebook](notebooks/unity_catalog_hands_on_examples.ipynb)
-11. [Jobs and Workflows Notebook](notebooks/jobs_and_workflows_examples.ipynb)
-12. [Databricks SQL Notebook](notebooks/databricks_sql_examples.ipynb)
-13. [Streaming and Auto Loader Notebook](notebooks/streaming_and_autoloader_examples.ipynb)
+8. [08 - Databricks FAQ and Interview Prep](tutorials/08-databricks-faq-and-interview-prep.md)
+9. [Fundamentals Notebook](notebooks/databricks_fundamentals_examples.ipynb)
+10. [Delta Lake Operations Notebook](notebooks/delta_lake_operations_examples.ipynb)
+11. [Unity Catalog Hands-On Notebook](notebooks/unity_catalog_hands_on_examples.ipynb)
+12. [Jobs and Workflows Notebook](notebooks/jobs_and_workflows_examples.ipynb)
+13. [Databricks SQL Notebook](notebooks/databricks_sql_examples.ipynb)
+14. [Streaming and Auto Loader Notebook](notebooks/streaming_and_autoloader_examples.ipynb)
 
 ## Suggested order
 
@@ -54,6 +55,10 @@ Delta Lake is the table format and transaction layer that makes lakehouse-style 
 ### Quick reference
 
 The glossary page provides short definitions for the main Databricks platform, storage, governance, SQL, and streaming terms used across these tutorials.
+
+### Interview prep
+
+The FAQ page collects common Databricks questions and short, direct answers for revision, onboarding, and interview preparation.
 
 ## Common role mapping
 
