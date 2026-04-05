@@ -50,6 +50,7 @@ This repository is a compact learning path for Databricks fundamentals.
 
 Start with the platform overview, then move into governance, then infrastructure, and finish with notebook and job orchestration patterns.
 
+
 ## Topics covered
 
 ### Databricks at a glance
