@@ -30,20 +30,21 @@ This repository is a compact learning path for Databricks fundamentals.
 13. [13 - Observability and Troubleshooting](tutorials/13-observability-and-troubleshooting.md)
 14. [14 - External Integrations](tutorials/14-external-integrations.md)
 15. [15 - Real-World Ingestion Use Cases](tutorials/15-real-world-ingestion-use-cases.md)
-16. [Fundamentals Notebook](notebooks/databricks_fundamentals_examples.ipynb)
-17. [Delta Lake Operations Notebook](notebooks/delta_lake_operations_examples.ipynb)
-18. [Unity Catalog Hands-On Notebook](notebooks/unity_catalog_hands_on_examples.ipynb)
-19. [Jobs and Workflows Notebook](notebooks/jobs_and_workflows_examples.ipynb)
-20. [Databricks SQL Notebook](notebooks/databricks_sql_examples.ipynb)
-21. [Streaming and Auto Loader Notebook](notebooks/streaming_and_autoloader_examples.ipynb)
-22. [Machine Learning and MLflow Notebook](notebooks/machine_learning_and_mlflow_examples.ipynb)
-23. [APIs and SDK Notebook](notebooks/databricks_apis_and_sdk_examples.ipynb)
-24. [Scheduler Patterns Notebook](notebooks/scheduler_patterns_examples.ipynb)
-25. [Medallion Architecture End-to-End Notebook](notebooks/medallion_architecture_end_to_end_examples.ipynb)
-26. [Observability and Troubleshooting Notebook](notebooks/observability_and_troubleshooting_examples.ipynb)
-27. [Real-World Ingestion Patterns Notebook](notebooks/real_world_ingestion_patterns_examples.ipynb)
-28. [Kafka End-to-End Ingestion Notebook](notebooks/kafka_end_to_end_ingestion_examples.ipynb)
-29. [IoT Monitoring and Anomaly Notebook](notebooks/iot_monitoring_and_anomaly_examples.ipynb)
+16. [16 - Hive Metastore vs Catalog vs Unity Catalog](tutorials/16-hive-metastore-vs-catalog-vs-unity-catalog.md)
+17. [Fundamentals Notebook](notebooks/databricks_fundamentals_examples.ipynb)
+18. [Delta Lake Operations Notebook](notebooks/delta_lake_operations_examples.ipynb)
+19. [Unity Catalog Hands-On Notebook](notebooks/unity_catalog_hands_on_examples.ipynb)
+20. [Jobs and Workflows Notebook](notebooks/jobs_and_workflows_examples.ipynb)
+21. [Databricks SQL Notebook](notebooks/databricks_sql_examples.ipynb)
+22. [Streaming and Auto Loader Notebook](notebooks/streaming_and_autoloader_examples.ipynb)
+23. [Machine Learning and MLflow Notebook](notebooks/machine_learning_and_mlflow_examples.ipynb)
+24. [APIs and SDK Notebook](notebooks/databricks_apis_and_sdk_examples.ipynb)
+25. [Scheduler Patterns Notebook](notebooks/scheduler_patterns_examples.ipynb)
+26. [Medallion Architecture End-to-End Notebook](notebooks/medallion_architecture_end_to_end_examples.ipynb)
+27. [Observability and Troubleshooting Notebook](notebooks/observability_and_troubleshooting_examples.ipynb)
+28. [Real-World Ingestion Patterns Notebook](notebooks/real_world_ingestion_patterns_examples.ipynb)
+29. [Kafka End-to-End Ingestion Notebook](notebooks/kafka_end_to_end_ingestion_examples.ipynb)
+30. [IoT Monitoring and Anomaly Notebook](notebooks/iot_monitoring_and_anomaly_examples.ipynb)
 
 ## Suggested order
 
@@ -76,6 +77,10 @@ The external integrations guide and examples show how Databricks fits into Airfl
 The real-world ingestion guide and notebook show practical source patterns such as Kafka events, IoT sensor telemetry, file-based landing, API extraction, and CDC-style ingestion into bronze, silver, and gold layers.
 
 The dedicated Kafka and IoT notebooks go deeper into end-to-end event ingestion, device heartbeat checks, and anomaly candidate generation.
+
+### Governance distinctions
+
+The governance tutorials explain the difference between Hive metastore, catalogs, and Unity Catalog so older Spark or Hive terminology does not get mixed up with the modern Databricks governance model.
 
 ### Key terms
 

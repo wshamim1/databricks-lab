@@ -1,4 +1,4 @@
-# 02 - Unity Catalog vs Catalogs
+# 03 - Unity Catalog vs Catalogs
 
 ## Short answer
 
