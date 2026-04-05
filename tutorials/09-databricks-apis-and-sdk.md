@@ -34,6 +34,14 @@ Typical use cases:
 - Less manual JSON handling
 - Cleaner access to jobs, clusters, workspace, and account operations
 
+## Companion assets in this repo
+
+- Shell script: `scripts/databricks_rest_api_examples.sh`
+- Python SDK script: `scripts/databricks_sdk_examples.py`
+- Notebook walkthrough: `notebooks/databricks_apis_and_sdk_examples.ipynb`
+
+Use these as templates rather than production-ready deployment code.
+
 ## Authentication basics
 
 Common authentication inputs:
