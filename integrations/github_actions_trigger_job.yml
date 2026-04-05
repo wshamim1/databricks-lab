@@ -1,0 +1,26 @@
+name: Trigger Databricks Job
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_date:
+        description: Run date for the Databricks job
+        required: true
+        default: 2026-04-05
+
+jobs:
+  trigger-databricks-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Databricks run-now
+        env:
+          DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
+          DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
+          JOB_ID: 12345
+          RUN_DATE: ${{ github.event.inputs.run_date }}
+        run: |
+          curl --request POST "$DATABRICKS_HOST/api/2.1/jobs/run-now" \
+            --header "Authorization: Bearer $DATABRICKS_TOKEN" \
+            --header "Content-Type: application/json" \
+            --data "{\"job_id\": $JOB_ID, \"job_parameters\": {\"run_date\": \"$RUN_DATE\", \"run_mode\": \"incremental\"}}"

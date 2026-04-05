@@ -1,0 +1,11 @@
+databricks_lab:
+  target: dev
+  outputs:
+    dev:
+      type: databricks
+      catalog: main
+      schema: gold
+      host: https://your-databricks-workspace
+      http_path: /sql/1.0/warehouses/your-warehouse-id
+      token: env_var('DATABRICKS_TOKEN')
+      threads: 4

@@ -1,0 +1,14 @@
+name: databricks_lab_example
+version: 1.0.0
+config-version: 2
+
+profile: databricks_lab
+
+model-paths:
+  - models
+
+models:
+  databricks_lab_example:
+    +materialized: table
+    +catalog: main
+    +schema: gold

@@ -1,0 +1,26 @@
+{
+  "Comment": "Trigger a Databricks job and continue when the API call succeeds.",
+  "StartAt": "RunDatabricksJob",
+  "States": {
+    "RunDatabricksJob": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::http:invoke",
+      "Parameters": {
+        "ApiEndpoint": "https://your-databricks-workspace/api/2.1/jobs/run-now",
+        "Method": "POST",
+        "Headers": {
+          "Authorization": "Bearer ${DATABRICKS_TOKEN}",
+          "Content-Type": "application/json"
+        },
+        "RequestBody": {
+          "job_id": 12345,
+          "job_parameters": {
+            "run_date.$": "$.run_date",
+            "run_mode": "incremental"
+          }
+        }
+      },
+      "End": true
+    }
+  }
+}
