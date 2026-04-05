@@ -30,9 +30,21 @@ Databricks is the platform. Delta Lake is one of the core technologies used on t
 
 Unity Catalog is Databricks' centralized governance layer for catalogs, schemas, tables, views, volumes, models, and related assets.
 
+### What is Hive metastore?
+
+Hive metastore is an older metadata repository used to store information about databases, tables, schemas, partitions, and table locations.
+
+### What is the difference between Hive metastore and Unity Catalog?
+
+Hive metastore is the older metadata model. Unity Catalog is the modern Databricks governance system with stronger centralized permissions, lineage, auditing, and cross-workspace governance.
+
 ### What is the difference between Unity Catalog and a catalog?
 
 Unity Catalog is the governance system. A catalog is one namespace inside that system.
+
+### What is the difference between Hive metastore naming and Unity Catalog naming?
+
+Hive metastore patterns often use `database.table`. Unity Catalog patterns usually use `catalog.schema.table`.
 
 ### What is the hierarchy in Unity Catalog?
 
@@ -137,6 +149,7 @@ Parameterize them, reduce inline business logic, move reusable code into modules
 - Databricks: the platform
 - Lakehouse: the architecture pattern
 - Delta Lake: the table and transaction layer
+- Hive metastore: older metadata model
 - Unity Catalog: the governance layer
 - Catalog: a namespace inside Unity Catalog
 - Workspace: collaboration surface
