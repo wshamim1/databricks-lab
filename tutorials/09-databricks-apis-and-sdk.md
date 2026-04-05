@@ -46,6 +46,8 @@ Separated examples:
 
 - REST jobs script: `scripts/rest/jobs_api.sh`
 - REST clusters script: `scripts/rest/clusters_api.sh`
+- REST DBFS script: `scripts/rest/dbfs_api.sh`
+- REST libraries script: `scripts/rest/libraries_api.sh`
 - REST workspace script: `scripts/rest/workspace_api.sh`
 - REST permissions script: `scripts/rest/permissions_api.sh`
 - REST repos script: `scripts/rest/repos_api.sh`
@@ -56,6 +58,8 @@ Separated examples:
 - REST serving endpoints script: `scripts/rest/serving_endpoints_api.sh`
 - SDK jobs script: `scripts/sdk/jobs_api.py`
 - SDK clusters script: `scripts/sdk/clusters_api.py`
+- SDK DBFS script: `scripts/sdk/dbfs_api.py`
+- SDK libraries script: `scripts/sdk/libraries_api.py`
 - SDK workspace script: `scripts/sdk/workspace_api.py`
 - SDK permissions script: `scripts/sdk/permissions_api.py`
 - SDK repos script: `scripts/sdk/repos_api.py`
@@ -185,9 +189,38 @@ Beyond jobs and clusters, the most common APIs teams usually automate are:
 - Unity Catalog and permissions APIs: catalogs, schemas, tables, grants, and governance metadata
 - Secret management APIs: manage secret scopes and secrets, depending on platform setup
 - Files and DBFS related APIs: move or inspect files where applicable
+- Library APIs: install Python packages, JARs, or other supported libraries on clusters
 - Serving or model APIs: manage model serving or inference endpoints in ML workflows
 
 If you are automating platform administration, workspace, permissions, cluster policies, and SQL warehouse APIs are usually the next places to look after jobs and compute.
+
+## DBFS APIs usually cover
+
+DBFS automation commonly includes:
+
+- creating folders
+- uploading small files
+- listing paths
+- reading or managing file metadata
+
+These APIs are useful when you need to move support files, stage small artifacts, or reference paths such as `dbfs:/FileStore/...` in automation.
+
+## Library APIs usually cover
+
+Library automation commonly includes:
+
+- installing Python packages from PyPI
+- attaching JAR files to clusters
+- checking library installation status
+
+These APIs are useful when clusters need specific runtime dependencies beyond the default environment.
+
+Typical examples include:
+
+- Python package: `pandas==2.2.2`
+- JAR path: `dbfs:/FileStore/jars/example-library.jar`
+
+In practice, teams often upload a JAR or wheel first and then attach it through the libraries API.
 
 ## Which "other" APIs matter most
 
@@ -199,6 +232,8 @@ For most platform teams, the next practical sequence after jobs and clusters is:
 4. Cluster policies APIs
 5. SQL warehouses APIs
 6. Unity Catalog APIs
+
+DBFS and library APIs are also common when you need file movement or cluster dependency management.
 
 That order usually gives the most value for day-to-day automation.
 
