@@ -20,6 +20,14 @@ The lakehouse is an architecture that combines low-cost data lake storage with w
 
 Delta Lake is the table and transaction layer that adds ACID transactions, schema control, update and delete support, and time travel on top of cloud storage.
 
+### What is a Delta table?
+
+A Delta table is a table stored in Delta format, which means it combines data files with a transaction log for reliable reads, writes, history, and time travel.
+
+### What is the difference between a managed table and an external table?
+
+Managed vs external describes who controls the storage path and lifecycle. It does not by itself tell you whether the table format is Delta.
+
 ### What is the difference between Databricks and Delta Lake?
 
 Databricks is the platform. Delta Lake is one of the core technologies used on that platform for reliable table storage.
@@ -149,6 +157,7 @@ Parameterize them, reduce inline business logic, move reusable code into modules
 - Databricks: the platform
 - Lakehouse: the architecture pattern
 - Delta Lake: the table and transaction layer
+- Delta table: one concrete table stored in Delta format
 - Hive metastore: older metadata model
 - Unity Catalog: the governance layer
 - Catalog: a namespace inside Unity Catalog
