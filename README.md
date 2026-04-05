@@ -21,11 +21,13 @@ This repository is a compact learning path for Databricks fundamentals.
 4. [04 - Architecture, Workspace, and Compute](tutorials/04-architecture-workspace-compute.md)
 5. [05 - Notebooks, Jobs, and Scheduling](tutorials/05-notebooks-jobs-scheduling.md)
 6. [06 - Databricks Architecture Diagram](tutorials/06-databricks-architecture-diagram.md)
-7. [Fundamentals Notebook](notebooks/databricks_fundamentals_examples.ipynb)
-8. [Delta Lake Operations Notebook](notebooks/delta_lake_operations_examples.ipynb)
-9. [Unity Catalog Hands-On Notebook](notebooks/unity_catalog_hands_on_examples.ipynb)
-10. [Jobs and Workflows Notebook](notebooks/jobs_and_workflows_examples.ipynb)
-11. [Databricks SQL Notebook](notebooks/databricks_sql_examples.ipynb)
+7. [07 - Databricks Glossary](tutorials/07-databricks-glossary.md)
+8. [Fundamentals Notebook](notebooks/databricks_fundamentals_examples.ipynb)
+9. [Delta Lake Operations Notebook](notebooks/delta_lake_operations_examples.ipynb)
+10. [Unity Catalog Hands-On Notebook](notebooks/unity_catalog_hands_on_examples.ipynb)
+11. [Jobs and Workflows Notebook](notebooks/jobs_and_workflows_examples.ipynb)
+12. [Databricks SQL Notebook](notebooks/databricks_sql_examples.ipynb)
+13. [Streaming and Auto Loader Notebook](notebooks/streaming_and_autoloader_examples.ipynb)
 
 ## Suggested order
 
@@ -49,6 +51,10 @@ Delta Lake is the table format and transaction layer that makes lakehouse-style 
 - Unity Catalog: the governance layer for data and AI assets across workspaces
 - Catalog: a namespace inside Unity Catalog, used to organize schemas and tables
 
+### Quick reference
+
+The glossary page provides short definitions for the main Databricks platform, storage, governance, SQL, and streaming terms used across these tutorials.
+
 ## Common role mapping
 
 - Data engineers build ingestion and transformation pipelines
@@ -59,5 +65,5 @@ Delta Lake is the table format and transaction layer that makes lakehouse-style 
 ## How to use this repo
 
 - Read the markdown guides for concepts and terminology
-- Open the notebooks for working examples of Spark code, Delta operations, Unity Catalog usage, Databricks SQL, job orchestration, and notebook patterns
+- Open the notebooks for working examples of Spark code, Delta operations, Unity Catalog usage, Databricks SQL, streaming patterns, job orchestration, and notebook patterns
 - Extend the examples with your own datasets, Delta tables, or job definitions
