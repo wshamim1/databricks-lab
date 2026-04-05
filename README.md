@@ -23,13 +23,14 @@ This repository is a compact learning path for Databricks fundamentals.
 6. [06 - Databricks Architecture Diagram](tutorials/06-databricks-architecture-diagram.md)
 7. [07 - Databricks Glossary](tutorials/07-databricks-glossary.md)
 8. [08 - Databricks FAQ and Interview Prep](tutorials/08-databricks-faq-and-interview-prep.md)
-9. [Fundamentals Notebook](notebooks/databricks_fundamentals_examples.ipynb)
-10. [Delta Lake Operations Notebook](notebooks/delta_lake_operations_examples.ipynb)
-11. [Unity Catalog Hands-On Notebook](notebooks/unity_catalog_hands_on_examples.ipynb)
-12. [Jobs and Workflows Notebook](notebooks/jobs_and_workflows_examples.ipynb)
-13. [Databricks SQL Notebook](notebooks/databricks_sql_examples.ipynb)
-14. [Streaming and Auto Loader Notebook](notebooks/streaming_and_autoloader_examples.ipynb)
-15. [Machine Learning and MLflow Notebook](notebooks/machine_learning_and_mlflow_examples.ipynb)
+9. [09 - Databricks APIs and SDK](tutorials/09-databricks-apis-and-sdk.md)
+10. [Fundamentals Notebook](notebooks/databricks_fundamentals_examples.ipynb)
+11. [Delta Lake Operations Notebook](notebooks/delta_lake_operations_examples.ipynb)
+12. [Unity Catalog Hands-On Notebook](notebooks/unity_catalog_hands_on_examples.ipynb)
+13. [Jobs and Workflows Notebook](notebooks/jobs_and_workflows_examples.ipynb)
+14. [Databricks SQL Notebook](notebooks/databricks_sql_examples.ipynb)
+15. [Streaming and Auto Loader Notebook](notebooks/streaming_and_autoloader_examples.ipynb)
+16. [Machine Learning and MLflow Notebook](notebooks/machine_learning_and_mlflow_examples.ipynb)
 
 ## Suggested order
 
@@ -60,6 +61,10 @@ The glossary page provides short definitions for the main Databricks platform, s
 ### Interview prep
 
 The FAQ page collects common Databricks questions and short, direct answers for revision, onboarding, and interview preparation.
+
+### Automation
+
+The APIs and SDK guide shows how to create and manage jobs and compute programmatically with Databricks REST APIs and the Python SDK.
 
 ## Common role mapping
 
