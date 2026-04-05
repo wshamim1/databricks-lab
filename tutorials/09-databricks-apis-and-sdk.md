@@ -49,11 +49,17 @@ Separated examples:
 - REST workspace script: `scripts/rest/workspace_api.sh`
 - REST permissions script: `scripts/rest/permissions_api.sh`
 - REST repos script: `scripts/rest/repos_api.sh`
+- REST cluster policies script: `scripts/rest/cluster_policies_api.sh`
+- REST SQL warehouses script: `scripts/rest/sql_warehouses_api.sh`
+- REST Unity Catalog script: `scripts/rest/unity_catalog_api.sh`
 - SDK jobs script: `scripts/sdk/jobs_api.py`
 - SDK clusters script: `scripts/sdk/clusters_api.py`
 - SDK workspace script: `scripts/sdk/workspace_api.py`
 - SDK permissions script: `scripts/sdk/permissions_api.py`
 - SDK repos script: `scripts/sdk/repos_api.py`
+- SDK cluster policies script: `scripts/sdk/cluster_policies_api.py`
+- SDK SQL warehouses script: `scripts/sdk/sql_warehouses_api.py`
+- SDK Unity Catalog script: `scripts/sdk/unity_catalog_api.py`
 
 Use these as templates rather than production-ready deployment code.
 
@@ -191,6 +197,37 @@ For most platform teams, the next practical sequence after jobs and clusters is:
 6. Unity Catalog APIs
 
 That order usually gives the most value for day-to-day automation.
+
+## What are cluster policies
+
+Cluster policies let platform teams enforce compute standards such as allowed node types, runtime versions, autotermination settings, worker counts, and other guardrails.
+
+They are useful when you want to:
+
+- Control cost and prevent oversized clusters
+- Standardize approved Spark runtimes
+- Enforce security-related compute settings
+- Reduce manual configuration drift across teams
+
+## What are SQL warehouses
+
+SQL warehouses are Databricks compute resources optimized for SQL analytics, dashboards, and BI workloads.
+
+They are useful when you want to:
+
+- Serve analyst queries efficiently
+- Power dashboards and reporting tools
+- Separate SQL workloads from Spark engineering compute
+
+## What Unity Catalog APIs usually cover
+
+Unity Catalog automation commonly includes:
+
+- Catalog creation and listing
+- Schema creation and listing
+- Table and view metadata operations
+- Grants and privilege management
+- Governed object discovery across environments
 
 ## Python SDK setup
 
