@@ -113,7 +113,7 @@ The scheduler comparison and scheduler architecture pages explain how Databricks
 - Read the markdown guides for concepts and terminology
 - Open the notebooks for working examples of Spark code, Delta operations, medallion layering, observability checks, real-world ingestion patterns, Kafka pipelines, IoT monitoring patterns, Unity Catalog usage, Databricks SQL, streaming patterns, machine learning workflows, API automation, scheduler design, job orchestration, and notebook patterns
 - Use the scripts in `scripts/` as starting points for Databricks REST API and Python SDK automation
-- Use the scripts in `scripts/` as starting points for Databricks REST API, Python SDK, and external scheduler automation examples
+- Use the scripts in `scripts/` as starting points for Databricks REST API, Python SDK, external scheduler automation, and Kafka or Event Hubs ingestion trigger examples
 - Use the examples in `integrations/` as starting points for Airflow, Azure Data Factory, GitHub Actions, and Step Functions integration patterns
 - Use the examples in `integrations/dbt/` as a starting point for dbt on Databricks model projects
 - Extend the examples with your own datasets, Delta tables, or job definitions

@@ -1,0 +1,17 @@
+{
+  "name": "Run_Databricks_Event_Hubs_Ingestion",
+  "type": "DatabricksNotebook",
+  "typeProperties": {
+    "notebookPath": "/Workspace/Shared/notebooks/iot_event_hubs_ingestion",
+    "baseParameters": {
+      "run_date": "@{formatDateTime(pipeline().TriggerTime, 'yyyy-MM-dd')}",
+      "source_type": "event_hubs",
+      "event_hub_name": "iot-sensor-events",
+      "consumer_group": "$Default"
+    }
+  },
+  "linkedServiceName": {
+    "referenceName": "AzureDatabricksLinkedService",
+    "type": "LinkedServiceReference"
+  }
+}
