@@ -24,15 +24,17 @@ This repository is a compact learning path for Databricks fundamentals.
 7. [07 - Databricks Glossary](tutorials/07-databricks-glossary.md)
 8. [08 - Databricks FAQ and Interview Prep](tutorials/08-databricks-faq-and-interview-prep.md)
 9. [09 - Databricks APIs and SDK](tutorials/09-databricks-apis-and-sdk.md)
-10. [Fundamentals Notebook](notebooks/databricks_fundamentals_examples.ipynb)
-11. [Delta Lake Operations Notebook](notebooks/delta_lake_operations_examples.ipynb)
-12. [Unity Catalog Hands-On Notebook](notebooks/unity_catalog_hands_on_examples.ipynb)
-13. [Jobs and Workflows Notebook](notebooks/jobs_and_workflows_examples.ipynb)
-14. [Databricks SQL Notebook](notebooks/databricks_sql_examples.ipynb)
-15. [Streaming and Auto Loader Notebook](notebooks/streaming_and_autoloader_examples.ipynb)
-16. [Machine Learning and MLflow Notebook](notebooks/machine_learning_and_mlflow_examples.ipynb)
-17. [APIs and SDK Notebook](notebooks/databricks_apis_and_sdk_examples.ipynb)
-18. [Scheduler Patterns Notebook](notebooks/scheduler_patterns_examples.ipynb)
+10. [10 - Scheduler Comparison](tutorials/10-scheduler-comparison.md)
+11. [11 - Scheduler Architecture Diagram](tutorials/11-scheduler-architecture-diagram.md)
+12. [Fundamentals Notebook](notebooks/databricks_fundamentals_examples.ipynb)
+13. [Delta Lake Operations Notebook](notebooks/delta_lake_operations_examples.ipynb)
+14. [Unity Catalog Hands-On Notebook](notebooks/unity_catalog_hands_on_examples.ipynb)
+15. [Jobs and Workflows Notebook](notebooks/jobs_and_workflows_examples.ipynb)
+16. [Databricks SQL Notebook](notebooks/databricks_sql_examples.ipynb)
+17. [Streaming and Auto Loader Notebook](notebooks/streaming_and_autoloader_examples.ipynb)
+18. [Machine Learning and MLflow Notebook](notebooks/machine_learning_and_mlflow_examples.ipynb)
+19. [APIs and SDK Notebook](notebooks/databricks_apis_and_sdk_examples.ipynb)
+20. [Scheduler Patterns Notebook](notebooks/scheduler_patterns_examples.ipynb)
 
 ## Suggested order
 
@@ -68,6 +70,10 @@ The FAQ page collects common Databricks questions and short, direct answers for 
 
 The APIs and SDK guide shows how to create and manage jobs and compute programmatically with Databricks REST APIs and the Python SDK.
 
+### Orchestration choices
+
+The scheduler comparison and scheduler architecture pages explain how Databricks Jobs compare with Airflow, Azure Data Factory, and Step Functions, plus how internal and external schedulers fit together.
+
 ## Common role mapping
 
 - Data engineers build ingestion and transformation pipelines
@@ -80,4 +86,5 @@ The APIs and SDK guide shows how to create and manage jobs and compute programma
 - Read the markdown guides for concepts and terminology
 - Open the notebooks for working examples of Spark code, Delta operations, Unity Catalog usage, Databricks SQL, streaming patterns, machine learning workflows, API automation, scheduler design, job orchestration, and notebook patterns
 - Use the scripts in `scripts/` as starting points for Databricks REST API and Python SDK automation
+- Use the scripts in `scripts/` as starting points for Databricks REST API, Python SDK, and external scheduler automation examples
 - Extend the examples with your own datasets, Delta tables, or job definitions

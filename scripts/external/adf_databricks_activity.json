@@ -1,0 +1,15 @@
+{
+  "name": "Run_Databricks_Orders_Notebook",
+  "type": "DatabricksNotebook",
+  "typeProperties": {
+    "notebookPath": "/Workspace/Shared/notebooks/ingest_orders",
+    "baseParameters": {
+      "run_date": "@{pipeline().TriggerTime}",
+      "run_mode": "incremental"
+    }
+  },
+  "linkedServiceName": {
+    "referenceName": "AzureDatabricksLinkedService",
+    "type": "LinkedServiceReference"
+  }
+}
