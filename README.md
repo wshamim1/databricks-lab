@@ -52,6 +52,8 @@ This repository is a compact learning path for Databricks fundamentals.
 35. [Kafka End-to-End Ingestion Notebook](notebooks/kafka_end_to_end_ingestion_examples.ipynb)
 36. [IoT Monitoring and Anomaly Notebook](notebooks/iot_monitoring_and_anomaly_examples.ipynb)
 37. [Real-World End-to-End Use Cases](use_cases/README.md)
+38. [Unity Catalog Learning Path](tutorials/unity_catalog/README.md)
+39. [Unity Catalog Learning Path Exercises Notebook](notebooks/unity_catalog_learning_path_exercises.ipynb)
 
 ## Suggested order
 
