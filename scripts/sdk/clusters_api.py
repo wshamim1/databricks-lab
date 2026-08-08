@@ -4,6 +4,8 @@ import argparse
 
 from databricks.sdk import WorkspaceClient
 
+from sdk_auth import add_auth_arguments, build_workspace_client
+
 
 def create_cluster(client: WorkspaceClient) -> str:
     cluster = client.clusters.create(
@@ -30,8 +32,13 @@ def create_and_install(client: WorkspaceClient) -> None:
 
 
 def list_clusters(client: WorkspaceClient) -> None:
+    found = False
     for cluster in client.clusters.list():
+        found = True
         print(cluster.cluster_id, cluster.cluster_name)
+
+    if not found:
+        print("No clusters found for this workspace/token.")
 
 
 def delete_cluster(client: WorkspaceClient, cluster_id: str) -> None:
@@ -41,6 +48,7 @@ def delete_cluster(client: WorkspaceClient, cluster_id: str) -> None:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Databricks clusters SDK examples")
+    add_auth_arguments(parser)
     subparsers = parser.add_subparsers(dest="command", required=True)
     subparsers.add_parser("create")
     subparsers.add_parser("create-and-install")
@@ -52,7 +60,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main() -> None:
     args = build_parser().parse_args()
-    client = WorkspaceClient()
+    client = build_workspace_client(args)
 
     if args.command == "create":
         create_cluster(client)

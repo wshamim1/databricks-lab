@@ -1,0 +1,4 @@
+warehouse_id,sku,snapshot_ts,on_hand_qty,reserved_qty
+W01,SKU-RED-01,2026-08-08T09:00:00Z,300,20
+W01,SKU-BLK-02,2026-08-08T09:00:00Z,120,15
+W02,SKU-RED-01,2026-08-08T09:00:00Z,500,50

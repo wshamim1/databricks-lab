@@ -51,6 +51,7 @@ This repository is a compact learning path for Databricks fundamentals.
 34. [Real-World Ingestion Patterns Notebook](notebooks/real_world_ingestion_patterns_examples.ipynb)
 35. [Kafka End-to-End Ingestion Notebook](notebooks/kafka_end_to_end_ingestion_examples.ipynb)
 36. [IoT Monitoring and Anomaly Notebook](notebooks/iot_monitoring_and_anomaly_examples.ipynb)
+37. [Real-World End-to-End Use Cases](use_cases/README.md)
 
 ## Suggested order
 

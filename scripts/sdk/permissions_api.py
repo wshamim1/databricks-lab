@@ -3,6 +3,8 @@
 import argparse
 from databricks.sdk import WorkspaceClient
 
+from sdk_auth import add_auth_arguments, build_workspace_client
+
 
 def get_permissions(client: WorkspaceClient, object_type: str, object_id: str) -> None:
     permissions = client.permissions.get(request_object_type=object_type, request_object_id=object_id)
@@ -22,6 +24,7 @@ def set_permissions(
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Databricks permissions SDK examples")
+    add_auth_arguments(parser)
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     get_parser = subparsers.add_parser("get")
@@ -39,7 +42,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main() -> None:
     args = build_parser().parse_args()
-    client = WorkspaceClient()
+    client = build_workspace_client(args)
 
     if args.command == "get":
         get_permissions(client, args.object_type, args.object_id)

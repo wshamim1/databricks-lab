@@ -3,6 +3,8 @@
 import argparse
 from databricks.sdk import WorkspaceClient
 
+from sdk_auth import add_auth_arguments, build_workspace_client
+
 
 def create_endpoint(client: WorkspaceClient) -> None:
     endpoint = client.serving_endpoints.create(
@@ -34,6 +36,7 @@ def delete_endpoint(client: WorkspaceClient, endpoint_name: str) -> None:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Databricks serving endpoints SDK examples")
+    add_auth_arguments(parser)
     subparsers = parser.add_subparsers(dest="command", required=True)
     subparsers.add_parser("create")
     subparsers.add_parser("list")
@@ -44,7 +47,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main() -> None:
     args = build_parser().parse_args()
-    client = WorkspaceClient()
+    client = build_workspace_client(args)
 
     if args.command == "create":
         create_endpoint(client)

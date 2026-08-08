@@ -4,6 +4,8 @@ import argparse
 
 from databricks.sdk import WorkspaceClient
 
+from sdk_auth import add_auth_arguments, build_workspace_client
+
 
 def install_libraries(client: WorkspaceClient, cluster_id: str) -> None:
     client.libraries.install(
@@ -23,6 +25,7 @@ def cluster_status(client: WorkspaceClient, cluster_id: str) -> None:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Databricks libraries SDK examples")
+    add_auth_arguments(parser)
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     install_parser = subparsers.add_parser("install")
@@ -36,7 +39,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main() -> None:
     args = build_parser().parse_args()
-    client = WorkspaceClient()
+    client = build_workspace_client(args)
 
     if args.command == "install":
         install_libraries(client, args.cluster_id)

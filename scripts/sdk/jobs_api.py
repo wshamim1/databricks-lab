@@ -3,6 +3,8 @@
 import argparse
 from databricks.sdk import WorkspaceClient
 
+from sdk_auth import add_auth_arguments, build_workspace_client
+
 
 def create_job(client: WorkspaceClient) -> None:
     job = client.jobs.create(
@@ -30,9 +32,14 @@ def create_job(client: WorkspaceClient) -> None:
 
 
 def list_jobs(client: WorkspaceClient) -> None:
+    found = False
     for job in client.jobs.list():
+        found = True
         name = job.settings.name if job.settings else "<unknown>"
         print(job.job_id, name)
+
+    if not found:
+        print("No jobs found for this workspace/token.")
 
 
 def run_job(client: WorkspaceClient, job_id: int) -> None:
@@ -45,7 +52,8 @@ def run_job(client: WorkspaceClient, job_id: int) -> None:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Databricks jobs SDK examples")
-    subparsers = parser.add_subparsers(dest="command", required=True)
+    add_auth_arguments(parser)
+    subparsers = parser.add_subparsers(dest="command")
     subparsers.add_parser("create")
     subparsers.add_parser("list")
     run_parser = subparsers.add_parser("run")
@@ -55,7 +63,10 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main() -> None:
     args = build_parser().parse_args()
-    client = WorkspaceClient()
+    if not args.command:
+        args.command = "list"
+
+    client = build_workspace_client(args)
 
     if args.command == "create":
         create_job(client)

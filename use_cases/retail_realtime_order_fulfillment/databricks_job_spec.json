@@ -1,0 +1,98 @@
+{
+  "name": "retail-realtime-order-fulfillment",
+  "max_concurrent_runs": 1,
+  "timeout_seconds": 0,
+  "tasks": [
+    {
+      "task_key": "bronze_ingest",
+      "description": "Ingest orders, inventory, and returns into bronze Delta tables",
+      "spark_python_task": {
+        "python_file": "dbfs:/FileStore/use_cases/retail_realtime_order_fulfillment/bronze_ingest_autoloader.py",
+        "parameters": [
+          "--catalog", "main",
+          "--schema", "retail_raw"
+        ]
+      },
+      "job_cluster_key": "etl_cluster",
+      "timeout_seconds": 3600,
+      "max_retries": 2,
+      "min_retry_interval_millis": 300000,
+      "retry_on_timeout": true
+    },
+    {
+      "task_key": "silver_transform",
+      "description": "Apply quality checks, deduplication, and silver transformations",
+      "depends_on": [
+        {
+          "task_key": "bronze_ingest"
+        }
+      ],
+      "spark_python_task": {
+        "python_file": "dbfs:/FileStore/use_cases/retail_realtime_order_fulfillment/silver_transform_dedup.py",
+        "parameters": [
+          "--catalog", "main",
+          "--schema", "retail_curated"
+        ]
+      },
+      "job_cluster_key": "etl_cluster",
+      "timeout_seconds": 3600,
+      "max_retries": 2,
+      "min_retry_interval_millis": 300000,
+      "retry_on_timeout": true
+    },
+    {
+      "task_key": "gold_publish",
+      "description": "Build gold KPI tables and write destination extracts",
+      "depends_on": [
+        {
+          "task_key": "silver_transform"
+        }
+      ],
+      "spark_python_task": {
+        "python_file": "dbfs:/FileStore/use_cases/retail_realtime_order_fulfillment/gold_kpi_and_destination.py",
+        "parameters": [
+          "--catalog", "main",
+          "--schema", "retail_serving",
+          "--export-path", "s3://my-company-curated/retail/fulfillment_kpi/"
+        ]
+      },
+      "job_cluster_key": "etl_cluster",
+      "timeout_seconds": 3600,
+      "max_retries": 1,
+      "min_retry_interval_millis": 300000,
+      "retry_on_timeout": true
+    }
+  ],
+  "job_clusters": [
+    {
+      "job_cluster_key": "etl_cluster",
+      "new_cluster": {
+        "spark_version": "14.3.x-scala2.12",
+        "node_type_id": "i3.xlarge",
+        "num_workers": 2,
+        "autoscale": {
+          "min_workers": 2,
+          "max_workers": 8
+        },
+        "spark_conf": {
+          "spark.databricks.delta.optimizeWrite.enabled": "true",
+          "spark.databricks.delta.autoCompact.enabled": "true"
+        },
+        "custom_tags": {
+          "domain": "retail",
+          "pipeline": "order-fulfillment"
+        }
+      }
+    }
+  ],
+  "email_notifications": {
+    "on_failure": [
+      "dataops@example.com"
+    ]
+  },
+  "tags": {
+    "owner": "data-engineering",
+    "environment": "dev",
+    "medallion": "bronze-silver-gold"
+  }
+}

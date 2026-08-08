@@ -3,6 +3,8 @@
 import argparse
 from databricks.sdk import WorkspaceClient
 
+from sdk_auth import add_auth_arguments, build_workspace_client
+
 
 def list_workspace(client: WorkspaceClient, path: str) -> None:
     for obj in client.workspace.list(path):
@@ -21,6 +23,7 @@ def delete_workspace(client: WorkspaceClient, path: str) -> None:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Databricks workspace SDK examples")
+    add_auth_arguments(parser)
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     list_parser = subparsers.add_parser("list")
@@ -37,7 +40,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main() -> None:
     args = build_parser().parse_args()
-    client = WorkspaceClient()
+    client = build_workspace_client(args)
 
     if args.command == "list":
         list_workspace(client, args.path)

@@ -1,2 +1,15 @@
 articles/
 **/articles/
+
+# Local environment and secrets
+.env
+.env.*
+
+# Python virtual environments
+.venv/
+.ven/
+venv/
+
+# Python cache files
+__pycache__/
+*.pyc

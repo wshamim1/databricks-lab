@@ -1,0 +1,2 @@
+{"return_id":"R9001","order_id":"O1002","sku":"SKU-BLK-02","return_ts":"2026-08-08T10:30:00Z","reason_code":"size_issue","source_system":"returns_api"}
+{"return_id":"R9002","order_id":"O1003","sku":"SKU-RED-01","return_ts":"2026-08-08T11:00:00Z","reason_code":"damaged","source_system":"returns_api"}
